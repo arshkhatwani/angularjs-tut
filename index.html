@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
     </head>
 
-    <body>
+    <body ng-init="nums=[1,2,3]; color='orange'">
         <input type="text" placeholder="Enter your fav car" ng-model="favCar" />
         <p>Your favourite car is: {{favCar}}</p>
+
+        <p class="{{color}}">Total sum is: {{nums[0] + nums[1] + nums[2]}}</p>
     </body>
 </html>
