@@ -21,12 +21,44 @@
                 placeholder="Search"
                 class="mb-4 border border-gray-300 w-full p-1"
             />
+
+            <div class="mb-6">
+                <button
+                    ng-click="order = 'name'"
+                    class="bg-blue-500 text-white py-2 px-3 rounded-md focus:bg-blue-700"
+                >
+                    Order by name
+                </button>
+                <button
+                    ng-click="order = 'belt'"
+                    class="bg-blue-500 text-white py-2 px-3 rounded-md focus:bg-blue-700"
+                >
+                    Order by belt
+                </button>
+            </div>
             <ul>
                 <li
-                    ng-repeat="ninja in ninjas | orderBy: 'name' | filter: searchNinja"
+                    ng-repeat="ninja in ninjas | orderBy: order | filter: searchNinja"
                     ng-show="ninja.available"
+                    class="flex flex-row justify-between my-4"
                 >
-                    {{ninja.name}} - {{ninja.price | currency: '$'}}
+                    <span>
+                        {{ninja.name}} - {{ninja.price | currency: '$'}}
+                    </span>
+
+                    <div>
+                        <span
+                            class="p-1.5 rounded-lg text-white mr-2"
+                            style="background-color: {{ninja.belt}}"
+                            >{{ninja.belt}} belt</span
+                        >
+
+                        <span
+                            class="cursor-pointer text-red-600"
+                            ng-click="removeNinja(ninja)"
+                            >x</span
+                        >
+                    </div>
                 </li>
             </ul>
         </div>

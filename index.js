@@ -26,10 +26,27 @@ myNinjaApp.controller("NinjaController", [
             },
             {
                 name: "shaun",
-                belt: "black",
+                belt: "blue",
                 price: 40,
                 available: true,
             },
+            {
+                name: "paxton",
+                belt: "green",
+                price: 50,
+                available: true,
+            },
+            {
+                name: "ella",
+                belt: "orange",
+                price: 80,
+                available: true,
+            },
         ];
+
+        $scope.removeNinja = function (ninja) {
+            const index = $scope.ninjas.indexOf(ninja);
+            $scope.ninjas.splice(index, 1);
+        };
     },
 ]);
