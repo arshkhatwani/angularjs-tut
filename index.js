@@ -10,21 +10,25 @@ myNinjaApp.controller("NinjaController", [
                 name: "Yoshi",
                 belt: "green",
                 price: 20,
+                available: true,
             },
             {
                 name: "Crystal",
                 belt: "Yellow",
                 price: 30,
+                available: false,
             },
             {
                 name: "Ryu",
                 belt: "orange",
                 price: 10,
+                available: false,
             },
             {
                 name: "shaun",
                 belt: "black",
                 price: 40,
+                available: true,
             },
         ];
     },
