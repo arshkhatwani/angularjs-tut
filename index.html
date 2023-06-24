@@ -13,8 +13,13 @@
         <div ng-controller="NinjaController">
             <p>{{message}}</p>
 
+            <input type="text" ng-model="searchNinja" placeholder="Search" />
             <ul>
-                <li ng-repeat="coder in coders">{{coder}}</li>
+                <li
+                    ng-repeat="ninja in ninjas | orderBy: 'name' | filter: searchNinja"
+                >
+                    {{ninja.name}} - {{ninja.price | currency: '$'}}
+                </li>
             </ul>
         </div>
     </body>
