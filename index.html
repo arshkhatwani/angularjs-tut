@@ -6,14 +6,21 @@
         <title>Document</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <script src="./index.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
-        <div ng-controller="NinjaController">
-            <p>{{message}}</p>
+        <header ng-include="'./components/header.html'"></header>
 
-            <input type="text" ng-model="searchNinja" placeholder="Search" />
+        <div ng-controller="NinjaController" class="p-5 flex-col">
+            <p class="mb-4">{{message}}</p>
+            <input
+                type="text"
+                ng-model="searchNinja"
+                placeholder="Search"
+                class="mb-4 border border-gray-300 w-full p-1"
+            />
             <ul>
                 <li
                     ng-repeat="ninja in ninjas | orderBy: 'name' | filter: searchNinja"
